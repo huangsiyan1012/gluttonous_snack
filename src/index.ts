@@ -1,3 +1,11 @@
 // 引入样式
 import './style/index.less'
-console.log('Happy developing ✨')
+import './moduls/ScorePanel'
+import './moduls/Food'
+
+
+
+
+
+
+
