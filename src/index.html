@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,6 +8,27 @@
     <title>贪吃蛇</title>
 </head>
 <body>
-
+<!-- 游戏主容器 -->
+<div id="main">
+    <!-- 游戏界面 -->
+    <div id="stage">
+        <!--蛇 -->
+        <div id="snake">
+            <!-- snake内部div,一节一节的-->
+            <div></div>
+        </div>
+        <!-- 食物 -->
+        <div id="food"></div>
+    </div>
+    <!-- 积分区域 -->
+    <div id="score-panel">
+        <div>
+            SCORE:<span id="score">0</span>
+        </div>
+        <div>
+            LEVEL:<span id="level">1</span>
+        </div>
+    </div>
+</div>
 </body>
 </html>
