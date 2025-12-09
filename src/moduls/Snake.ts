@@ -36,3 +36,5 @@ class Snake {
         this.element.insertAdjacentHTML('beforeend', '<div></div>') // 第一个参数代表在element容器标签的结束标签前的位置，第二参数表示插入的是什么标签
     }
 }
+
+export default Snake
