@@ -1,8 +1,8 @@
 // 定义记分牌类scorePanel
 class ScrorePanel{
     // 记录分数和排名
-    private score = 0
-    private level = 1
+     score = 0
+     level = 1
     // 分数和排名所在的元素
     scoreElement: HTMLElement
     levelElement: HTMLElement
