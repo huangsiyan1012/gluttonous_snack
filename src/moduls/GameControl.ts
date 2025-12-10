@@ -12,6 +12,8 @@ class GameControl{
     scorePanel: ScorePanel
     // 蛇的移动方向(按键的方向)
     direction: string = ''
+    // 记录游戏是否结束
+    isLive: boolean = true
 
     constructor() {
         this.snake = new Snake()
@@ -73,12 +75,35 @@ class GameControl{
                 break
         }
 
+        // 检查蛇是否吃到食物
+        if(this.checkEatFood(X,Y)){
+            // 重置食物的位置
+            this.food.changePosition()
+            // 增加分数
+            this.scorePanel.addScore()
+            // 增加身体
+            this.snake.addBody()
+        }
+
         // 修改蛇的坐标
-        this.snake.X = X
-        this.snake.Y = Y
+        try{
+            this.snake.X = X
+            this.snake.Y = Y
+        }catch (e:any){
+            // 蛇撞墙游戏结束
+            alert(e.message + 'Game Over!')
+            this.isLive = false
+        }
 
         // 开启一个定时调用
-        setTimeout(this.run.bind(this),250 - (this.scorePanel.level - 1) * 25)
+        this.isLive && setTimeout(this.run.bind(this),250 - (this.scorePanel.level - 1) * 25)
+
+    }
+
+
+    // 检查蛇是否吃到食物
+    checkEatFood(X:number,Y:number){
+        return X === this.food.X && Y === this.food.Y
     }
 }
 
